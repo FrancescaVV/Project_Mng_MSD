@@ -1,11 +1,8 @@
-package org.app.domain.assignment;
+package org.app.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
-
-import org.app.domain.users.Person;
-import org.app.domain.users.Student;
 
 public class Assignment {
 	private Integer assigID;

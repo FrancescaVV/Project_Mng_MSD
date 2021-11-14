@@ -1,10 +1,7 @@
-package org.app.domain.assignment;
+package org.app.domain;
 
 import java.util.ArrayList;
 import java.util.Date;
-
-import org.app.domain.users.Professor;
-import org.app.domain.users.Student;
 
 public class Meetings {
 	private String meetingBody;

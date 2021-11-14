@@ -1,4 +1,4 @@
-package org.app.domain.assignment;
+package org.app.domain;
 
 public class Documentation {
 	private String docBody;

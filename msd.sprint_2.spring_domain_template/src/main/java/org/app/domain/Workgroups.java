@@ -1,9 +1,6 @@
-package org.app.domain.assignment;
+package org.app.domain;
 
 import java.util.ArrayList;
-
-import org.app.domain.users.Professor;
-import org.app.domain.users.Student;
 
 public class Workgroups {
 	private Integer wrkID;

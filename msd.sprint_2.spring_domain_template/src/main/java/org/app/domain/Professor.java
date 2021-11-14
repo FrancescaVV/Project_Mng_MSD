@@ -1,4 +1,4 @@
-package org.app.domain.users;
+package org.app.domain;
 
 public class Professor extends Person {
 	private String profDepartment;
