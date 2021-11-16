@@ -1,9 +1,15 @@
 package org.app.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Student extends Person {
 
 	private String studFaculty;
 	private String studSpecialization;
+	@Id @GeneratedValue
 	private String studId;
 	public String getStudFaculty() {
 		return studFaculty;

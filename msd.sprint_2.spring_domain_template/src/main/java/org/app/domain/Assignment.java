@@ -4,13 +4,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
 public class Assignment {
+	
+	@Id @GeneratedValue
 	private Integer assigID;
 	private Date assigDatestart;
 	private Date assigDateEnd;
 	private String assigName;
 	private Person assigStarter;
 	private AssignmentState assigState;
+	@ManyToMany
 	private ArrayList<Student> assigMem = new ArrayList<Student>();
 	public Integer getassigID() {
 		return assigID;

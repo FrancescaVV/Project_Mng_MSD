@@ -3,12 +3,19 @@ package org.app.domain;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+@Entity
 public class Task {
+	@Id @GeneratedValue
 	private String tskID;
 	private Date tskStartDate;
 	private Date tskEndDate;
 	private String tskDescription;
 	private Student tskStudResponsible;
+	@ManyToOne
 	private Assignment tskAssig;
 	private TaskState tskState;
 	public String getTskID() {

@@ -1,7 +1,13 @@
 package org.app.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Administrator extends Person {
 	private String adminDepartment;
+	@Id @GeneratedValue
 	private Integer adminId;
 	private String adminTitle;
 	

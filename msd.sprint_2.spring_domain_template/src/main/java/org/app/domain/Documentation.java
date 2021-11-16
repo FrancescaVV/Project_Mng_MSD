@@ -1,8 +1,14 @@
 package org.app.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Documentation {
 	private String docBody;
 	private String docObs;
+	@Id @GeneratedValue
 	private String idDoc;
 	public String getDocBody() {
 		return docBody;

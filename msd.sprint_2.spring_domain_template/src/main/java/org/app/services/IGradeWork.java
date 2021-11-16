@@ -1,5 +1,9 @@
 package org.app.services;
 
-public interface IGradeWork {
+import org.app.domain.Grades;
 
+public interface IGradeWork {
+	
+	 public Grades gradeAssignment();
+	 public Grades gradeWorkgroup();
 }
