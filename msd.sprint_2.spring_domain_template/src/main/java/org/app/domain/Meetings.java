@@ -22,7 +22,7 @@ public class Meetings {
 	private Professor mentor;
 	private String meetingObs;
 	private String meetingTopic;
-	private MeetingState meeetingState; 
+	private MeetingState meetingState; 
 	
 	
 	public String getMeetingBody() {
@@ -75,16 +75,19 @@ public class Meetings {
 		this.meetingMembers = meetingMembers;
 	}
 	public MeetingState getMeeetingState() {
-		return meeetingState;
+		return meetingState;
 	}
 	public void setMeeetingState(MeetingState meeetingState) {
-		this.meeetingState = meeetingState;
+		this.meetingState = meeetingState;
 	}
-	
 	@Override
 	public String toString() {
-		return "Meetings [meetingBody=" + meetingBody + ", meetingStartDate=" + meetingStartDate + ", meetingEndDate="
-				+ meetingEndDate + ", meetingTopic=" + meetingTopic + "]";
+		return "Meetings [meetingId=" + meetingId + ", meetingBody=" + meetingBody + ", meetingStartDate="
+				+ meetingStartDate + ", meetingEndDate=" + meetingEndDate + ", meetingMembers=" + meetingMembers
+				+ ", mentor=" + mentor + ", meetingObs=" + meetingObs + ", meetingTopic=" + meetingTopic
+				+ ", meetingState=" + meetingState + "]";
 	}
+	
+	
 	
 }
