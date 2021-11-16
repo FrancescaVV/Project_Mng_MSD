@@ -2,10 +2,20 @@ package org.app.domain;
 
 import java.util.ArrayList;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Workgroups {
+	@Id @GeneratedValue
 	private Integer wrkID;
+	@OneToMany
 	private ArrayList<Student> wkrList = new ArrayList<Student>();
 	private String wkrName;
+	@OneToOne
 	private Professor mentor;
 	public Integer getWrkID() {
 		return wrkID;

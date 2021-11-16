@@ -2,8 +2,14 @@ package org.app.domain;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Notification {
 	private Date dateNotif;
+	@Id @GeneratedValue
 	private Integer idNotif;
 	private String txtNotif;
 	public Date getDateNotif() {

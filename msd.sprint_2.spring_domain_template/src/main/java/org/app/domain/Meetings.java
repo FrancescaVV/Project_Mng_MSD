@@ -3,11 +3,22 @@ package org.app.domain;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
+
+@Entity
 public class Meetings {
+	@Id @GeneratedValue
+	private long meetingId;
 	private String meetingBody;
 	private Date meetingStartDate;
 	private Date meetingEndDate;
+	@ManyToMany
 	private ArrayList<Student> meetingMembers = new ArrayList<Student>();
+	@OneToOne
 	private Professor mentor;
 	private String meetingObs;
 	private String meetingTopic;

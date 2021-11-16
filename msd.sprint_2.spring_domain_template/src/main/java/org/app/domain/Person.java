@@ -3,7 +3,11 @@ package org.app.domain;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+@Entity @Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
 	private String persIdentityNum;
 	private String persFirstName;
