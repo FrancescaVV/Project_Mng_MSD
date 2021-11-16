@@ -4,11 +4,13 @@ import java.util.Date;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
 @Entity @Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
+	@Id
 	private String persIdentityNum;
 	private String persFirstName;
 	private String persLastName;
