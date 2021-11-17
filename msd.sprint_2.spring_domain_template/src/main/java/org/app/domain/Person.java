@@ -3,19 +3,31 @@ package org.app.domain;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 @Entity @Inheritance(strategy=InheritanceType.JOINED)
 public class Person {
-	@Id
+	@Id @NotNull
 	private String persIdentityNum;
+
+	@NotNull
 	private String persFirstName;
+
+	@NotNull
 	private String persLastName;
+
+	@Temporal(TemporalType.DATE)
+	@Past
 	private Date persDoB;
+
+	@Email
+	@NotNull
 	private String persEmail;
+
+	@NotNull
 	private String persNum;
 	private String persAdress;
 	private String persPhone;

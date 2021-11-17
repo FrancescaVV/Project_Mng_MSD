@@ -4,21 +4,37 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Assignment {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue @NotNull @Min(10)
 	private Integer assigID;
+
+	@NotNull(message = "Start Date is required!")
+	@Future(message = "Start Date must be a future date!")
+	@Temporal(TemporalType.DATE)
 	private Date assigDatestart;
+
+	@NotNull(message = "End Date is required!")
+	@Future(message = "End Date must be a future date!")
+	@Temporal(TemporalType.DATE)
 	private Date assigDateEnd;
+
+	@NotNull(message = "Assignment Name is required!")
+	@Size(min=1, message = "Assignment must have an explicit name!")
 	private String assigName;
+
+	@NotNull
 	private Person assigStarter;
+
 	private AssignmentState assigState;
+
 	@ManyToMany
 	private ArrayList<Student> assigMem = new ArrayList<Student>();
 	public Integer getassigID() {
@@ -69,6 +85,8 @@ public class Assignment {
 				+ ", assigName=" + assigName + ", assigStarter=" + assigStarter + ", assigState=" + assigState + ", assigMem="
 				+ assigMem + "]";
 	}
+
+	/* Constructors */
 	public Assignment(Integer assigID, Date assigDatestart, Date assigDateEnd, String assigName, Person assigStarter,
 			AssignmentState assigState, ArrayList<Student> assigMem) {
 		super();

@@ -7,15 +7,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Workgroups {
-	@Id @GeneratedValue
+
+	@Id @GeneratedValue @NotNull
 	private Integer wrkID;
+
 	@OneToMany
 	private ArrayList<Student> wkrList = new ArrayList<Student>();
+
+	@NotNull(message = "Workgroup Name is required!")
+	@Size(min=1, message = "Workgroup Name must have an explicit name!")
 	private String wkrName;
-	@OneToOne
+
+	@OneToOne @NotNull
 	private Professor mentor;
 	public Integer getWrkID() {
 		return wrkID;

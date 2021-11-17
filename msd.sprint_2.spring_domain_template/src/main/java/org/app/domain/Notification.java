@@ -2,16 +2,22 @@ package org.app.domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Notification {
+
+	@Temporal(TemporalType.DATE)
 	private Date dateNotif;
-	@Id @GeneratedValue
+
+	@NotNull  @Id @GeneratedValue
 	private Integer idNotif;
+
+	@NotEmpty
 	private String txtNotif;
+
 	public Date getDateNotif() {
 		return dateNotif;
 	}

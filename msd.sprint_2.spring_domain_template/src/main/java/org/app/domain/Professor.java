@@ -3,13 +3,18 @@ package org.app.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Professor extends Person {
+	@NotEmpty
 	private String profDepartment;
+	@NotEmpty
 	private String profFaculty;
+
 	private String profTitle;
-	@Id @GeneratedValue
+	@Id @GeneratedValue @NotNull
 	private Integer profId;
 	public String getProfDepartment() {
 		return profDepartment;

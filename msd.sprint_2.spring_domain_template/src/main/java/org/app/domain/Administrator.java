@@ -3,14 +3,21 @@ package org.app.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Administrator extends Person {
+
+
+	@NotEmpty
 	private String adminDepartment;
-	@Id @GeneratedValue
+
+	@Id @NotNull @GeneratedValue
 	private Integer adminId;
+
 	private String adminTitle;
-	
+
 	public String getAdminDepartment() {
 		return adminDepartment;
 	}

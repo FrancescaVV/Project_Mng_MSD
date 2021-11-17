@@ -2,15 +2,22 @@ package org.app.domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Grades {
 
+	@NotNull(message = "Grade Date is required!")
+	@Temporal(TemporalType.DATE)
 	private Date gradeDate;
+
+	@NotNull @Min(1) @Max(10)
 	private Double gradeValue;
+
 	@Id @GeneratedValue
 	private Integer gradeId;
 	public Date getGradeDate() {

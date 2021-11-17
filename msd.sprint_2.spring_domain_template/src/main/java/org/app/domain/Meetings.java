@@ -3,21 +3,30 @@ package org.app.domain;
 import java.util.ArrayList;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Meetings {
-	@Id @GeneratedValue
+	@Id @GeneratedValue @NotNull
 	private long meetingId;
+
+	@Size(min = 1, max = 1000)
 	private String meetingBody;
+
+	@NotNull @Future
+	@Temporal(TemporalType.DATE)
 	private Date meetingStartDate;
+
+	@NotNull @Future
+	@Temporal(TemporalType.DATE)
 	private Date meetingEndDate;
+
 	@ManyToMany
 	private ArrayList<Student> meetingMembers = new ArrayList<Student>();
+
 	@OneToOne
 	private Professor mentor;
 	private String meetingObs;

@@ -3,11 +3,15 @@ package org.app.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Documentation {
+	@Size(min= 1, max= 10000)
 	private String docBody;
+
 	private String docObs;
+
 	@Id @GeneratedValue
 	private String idDoc;
 	public String getDocBody() {

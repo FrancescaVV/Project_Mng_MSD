@@ -3,18 +3,32 @@ package org.app.domain;
 import java.util.Date;
 import java.util.Objects;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 @Entity
 public class Task {
-	@Id @GeneratedValue
+	@Id @GeneratedValue @NotNull
 	private String tskID;
+
+	@NotNull(message = "Start Date is required!")
+	@Future(message = "Start Date must be a future date!")
+	@Temporal(TemporalType.DATE)
 	private Date tskStartDate;
+
+	@NotNull(message = "End Date is required!")
+	@Future(message = "End Date must be a future date!")
+	@Temporal(TemporalType.DATE)
 	private Date tskEndDate;
+
+	@NotNull @Size(min =1, max=1000)
 	private String tskDescription;
+
+	@OneToOne
 	private Student tskStudResponsible;
+
 	@ManyToOne
 	private Assignment tskAssig;
 	private TaskState tskState;
